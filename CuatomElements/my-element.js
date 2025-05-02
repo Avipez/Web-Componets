@@ -1,13 +1,14 @@
+ 
 
 
-
-class myElement extends HTMLElement {
+class MyCustomElement extends HTMLElement {
     constructor() {
         super();
-        this.attachShadow({mode: "open"});
+        console.log("hola desde el constructor - memoria")
+        /* this.attachShadow({mode: "open"}); */
     }
 
-    static get observedAttributes() {
+    /* static get observedAttributes() {
         return ["title", "text", "img"];
     }
 
@@ -54,11 +55,18 @@ class myElement extends HTMLElement {
 
     render() {
         this.shadowRoot.appendChild(this.getTemplate().content.cloneNode(true));
-    }
+    } */
 
     connectedCallback() {
+        console.log("Hola desde el DOM")
         this.render();
+    }
+
+    disconnectedCallback() {
+        console.log("Adios del DOM")
     }
 }
 
-customElements.define("my-element", myElement);
+customElements.define("my-custom-element", MyCustomElement);
+
+document.querySelector("my-custom-element").remove();

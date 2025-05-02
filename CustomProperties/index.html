@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Properties</title>
+    <style>
+        my-element {
+            --primary-color: blue;
+            --heading-primary: 40px;
+        }
+        .segundo {
+            --primary-color: red;
+        }
+        .tercero {
+            --secondary-color: green;
+        }
+    </style>
+</head>
+<body>
+    <my-element >
+        <span slot="title">Hola desde componente 1 </span>
+        <span class="text" slot="text">Soy un parrafo y texto de ejemplo</span>
+    </my-element>
+    <my-element class="segundo">
+        <span slot="title">Hola desde componente 1 </span>
+        <span class="text" slot="text">Soy un parrafo y texto de ejemplo</span>
+    </my-element>
+    <my-element class="tercero">
+        <span slot="title">Hola desde componente 1 </span>
+        <span class="text" slot="text">Soy un parrafo y texto de ejemplo</span>
+    </my-element>
+    <script src="./custom-element.js"></script>
+</body>
+</html>
